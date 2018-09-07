@@ -4,9 +4,9 @@
 - Virtualization -> BIOS vtx
 - Hyper-V
 - Docker
--- Docker toolbox voor w7
+  - Docker toolbox voor w7
 - VS2017
--- Net core
+  - Net core
 
 ### SQL
 - SQL lokaal installeren of 
