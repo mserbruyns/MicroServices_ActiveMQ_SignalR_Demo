@@ -1,0 +1,83 @@
+﻿@page
+@model Pencil42.PakjesDienst.Web.Pages.PakjesViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PakjesView</title>
+    @section Scripts {
+        <script src="~/lib/signalr.js"></script>
+        <script type="text/javascript">
+            debugger;
+
+            //-----------------------------------------------KNOCKOUT FIRST TEST-----------------------------
+            //// Here's my data model
+            //var ViewModel = function (first, last) {
+            //    this.firstName = ko.observable(first);
+            //    this.lastName = ko.observable(last);
+
+            //    this.fullName = ko.pureComputed(function () {
+            //        // Knockout tracks dependencies automatically. It knows that fullName depends on firstName and lastName, because these get called when evaluating fullName.
+            //        return this.firstName() + " " + this.lastName();
+            //    }, this);
+            //};
+
+            //ko.applyBindings(new ViewModel("Planet", "Earth")); // This makes Knockout get to work
+
+            //-----------------------------------------------END KNOCKOUT FIRST TEST-----------------------------
+
+
+            var PakjesModel = function (pakjes) {
+                var self = this;
+                self.pakjes = ko.observableArray(pakjes);
+
+                self.addPakje = function (pakje) {
+                    self.pakjes.push(pakje);
+                };
+            };
+
+            var viewModel = new PakjesModel([
+            ]);
+            ko.applyBindings(viewModel);
+
+
+            // Activate jQuery Validation
+            //$("form").validate({ submitHandler: viewModel.save });
+
+
+            //var connection = new signalR.HubConnection("/hubs/pakjes");
+            let connection = new signalR.HubConnection("/hubs/pakjes", { transport: signalR.TransportType.LongPolling });
+
+            connection.on("broadcastMessage", function (sender, message) {
+                console.log(sender);
+                console.log(message);
+                viewModel.addPakje(message);               
+            });
+
+            connection.start().then(() => { console.log("connected"); });
+        </script>
+    }
+</head>
+<body>
+    <h2>pakjes?</h2>
+    <table data-bind='visible: pakjes().length > 0'>
+        <thead>
+            <tr>
+                <th>Pakje ID</th>
+                <th>Inhoud</th>
+            </tr>
+        </thead>
+        <tbody data-bind='foreach: pakjes'>
+            <tr>
+                <td><span class='required' data-bind='text: pakjeId' /></td>
+                <td><span class='required number' data-bind='text: inhoud' /></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
+
