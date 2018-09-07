@@ -51,14 +51,14 @@ management = 192.168.99.100:15672
 Lokaal -> Erlang nodig
 
 #### ActiveMQ
-Lokaal -> geen image op dockerhub
-Download Java JRE
-Set JAVA_HOME -> Systeemvariabele naar pad JRE en restart pc
-Download activemq
-Bin\activemq run
-Web console -> http://127.0.0.1:8161/admin/
-Queue ->  http://127.0.0.1:5762
-url aanpassen in appsettings
+Lokaal -> geen image op dockerhub  
+Download Java JRE  
+Set JAVA_HOME -> Systeemvariabele naar pad JRE en restart pc  
+Download activemq  
+Bin\activemq run  
+Web console -> http://127.0.0.1:8161/admin/  
+Queue ->  http://127.0.0.1:5762  
+url aanpassen in appsettings  
 
 Links:
 https://github.com/pencil42be/workshop-netcore
