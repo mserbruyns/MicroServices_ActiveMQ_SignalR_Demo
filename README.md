@@ -39,7 +39,6 @@ Staat momenteel op docker in container geinstalleerd (kan ook lokaal)
 https://hub.docker.com/_/rabbitmq/
 
 docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3
-
 docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3-management
 
 OF
