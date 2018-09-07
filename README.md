@@ -61,7 +61,7 @@ Queue ->  http://127.0.0.1:5762
 url aanpassen in appsettings  
 
 Links:
-https://github.com/pencil42be/workshop-netcore
-https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications
-https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing
-OpenShiftURL: https://openshift.gentgrp.gent.be:8443
+https://github.com/pencil42be/workshop-netcore  
+https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications  
+https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing  
+OpenShiftURL: https://openshift.gentgrp.gent.be:8443  
