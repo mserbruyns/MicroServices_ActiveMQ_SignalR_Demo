@@ -16,6 +16,7 @@ namespace Pencil42.PakjesDienst.Web
         {
 
             string test = "hello";
+            string test3 = "hello";
             BuildWebHost(args).Run();
         }
 
